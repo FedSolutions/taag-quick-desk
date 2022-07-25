@@ -21,7 +21,7 @@ To begin, you will need:
   - Teams
   - Power Apps
 - A team with the users who will be submitting HelpDesk tickets with this app. (You can add or remove team members later!)
-- A copy of the HelpDesk app GitHub repo (<https://github.com/FedSolutions/helpdesk>)
+- A copy of the HelpDesk app [GitHub repo] (https://github.com/FedSolutions/helpdesk/tree/main/Solution)
 
 - - -
 
@@ -76,7 +76,11 @@ NOTE: Add names, distribution list(s), or security group(s). You can always add/
 
 ## 2. Import the Flows to Teams Dataverse
 
-1. Download the solution from the FedSolutions repository here: [Microsoft FedSolutions Help Desk](https://github.com/FedSolutions/helpdesk)
+1. Download the solution from the FedSolutions repository here: [Microsoft FedSolutions Help Desk](https://github.com/FedSolutions/helpdesk/tree/main/Solution)
+
+2. Extract the zip file in latest version of solution folder. It will contain the following files:
+
+![Select App](assets/InstallationFiles.png)
 
 2. From the side-rail, select **Power Apps**.
 NOTE: if you do not see Power Apps in the side-rail, click on Apps and search for Power Apps. Click **Add** (or **Open** if previously added).
@@ -128,7 +132,7 @@ There is a requirement to store images in SharePoint. This reduces the storage r
      ![Advanced List Settings](assets/Deploy-SPList-6.png)
 ## 4. Import Admin Configuration App
 
-1. Download the admin app solution from the FedSolutions repository here: [Microsoft FedSolutions Help Desk](https://github.com/FedSolutions/helpdesk)
+1. Download the admin app solution from the FedSolutions repository here: [Microsoft FedSolutions Help Desk](https://github.com/FedSolutions/helpdesk/tree/main/Solution)
 
 2. From the side-rail, select **Power Apps**.
 NOTE: if you do not see Power Apps in the side-rail, click on Apps and search for Power Apps. Click **Add** (or **Open** if previously added).
@@ -193,7 +197,7 @@ NOTE: if you do not see Power Apps in the side-rail, click on Apps and search fo
 7. Repeat steps 2-6 for each category you need to configure. 
 ## 6. Import the HelpDesk app to Teams Dataverse
 
-1. Download the solution from the FedSolutions repository here: [Help Desk](https://github.com/FedSolutions/helpdesk)
+1. Download the solution from the FedSolutions repository here: [Help Desk](https://github.com/FedSolutions/helpdesk/tree/main/Solution)
 
 2. From the side-rail, select **Power Apps**.
 NOTE: if you do not see Power Apps in the side-rail, click on Apps and search for Power Apps. Click **Add** (or **Open** if previously added).
