@@ -2,13 +2,14 @@
   - [Prerequisites](#prerequisites)
   - [Deployment Steps](#Deployment-Steps)
     - [Create a Team](#1-create-a-team)
-    - [Import the Solution to Teams Dataverse](#2-import-the-solution-to-teams-dataverse)
-    - [Import the Admin app solution to Teams Dataverse](#3-import-admin-configuration-app)
-    - [Import the Flows to Teams Dataverse](#4-import-the-flows-to-teams-dataverse)
-    - [Configuration Settings](#5-configuration-settings)
-    - [Configuration optional cleanup Flow](#6-configure-cleanup-flow)
-    - [Configuration PowerBI report](#7-configure-powerBI-report)
-  - [Troubleshooting](#8-troubleshooting)
+    - [Import the Flows to Teams Dataverse](#2-import-the-flows-to-teams-dataverse)
+    - [Create SharePoint List for image storage](#3-create-sharePoint-list-for-image-storage)
+    - [Import the Admin app solution to Teams Dataverse](#4-import-admin-configuration-app)
+    - [Configure Categories table with configuration app](#5-configure-categories-table-with-configuration-app)
+    - [Import the Solution to Teams Dataverse](#6-import-the-helpDesk-app-to-teams-dataverse)
+    - [Configuration Settings](#7-configuration-settings)
+    - [Configuration optional cleanup Flow](#8-configure-cleanup-flow)
+  - [Troubleshooting](#9-troubleshooting)
 
 - - -
 
@@ -73,115 +74,7 @@ NOTE: Add names, distribution list(s), or security group(s). You can always add/
 
 ![Team is Ready](assets/Deploy-CreateATeam-10.png)
 
-## 2. Import the Solution to Teams Dataverse
-
-1. Download the solution from the FedSolutions repository here: [Help Desk](https://github.com/FedSolutions/helpdesk)
-
-2. From the side-rail, select **Power Apps**.
-NOTE: if you do not see Power Apps in the side-rail, click on Apps and search for Power Apps. Click **Add** (or **Open** if previously added).
-
-![Select App](assets/DeployApp-ImportApp-0.png)
-
-3. From the **Build** tab, select the appropriate team and click **See All** link at bottom.
-
-![Select App](assets/DeployApp-ImportApp-1A.png)
-
-- If no apps appear in list select the **Import your solution link**
-
-![Import App](assets/DeployApp-ImportApp-1.png)
-
-4. Clicking on the See all link will take you to following page where you can click on import button
-
-![Import App](assets/DeployApp-ImportApp-4A.png)
-
-6. From the Select a file pane, select **browse** and navigate to the location where you downloaded the solution in Step 1.
-
-![Browse](assets/DeployApp-ImportApp-2.png)
-
-7. Select **Next**.
-
-![Next](assets/DeployApp-ImportApp-3.png)
-
-8. Update connection for Flow. Click select a connection
-
-![Next](assets/DeployApp-ImportApp-3A.png)
-
-9. Click on new connection and authenticate to SharePoint
-
-![Next](assets/DeployApp-ImportApp-3B.png)
-
-10. Once completed creating a new connection for Flow start import steps again if needed and select the newly created SharePoint connection for the Flow. 
-
-![Next](assets/DeployApp-ImportApp-3C.png)
-
-11. On the **Import** pane, verify all items are selected and select **Import**.
-
-![Importing 2](assets/DeployApp-ImportApp-4.png)
-
-12. When the Import is complete, select apps from left menu and click on the Help Desk App. This will open application in PowerApps editor. You may be prompted to allow the data connections
-
-13. Click on allow when prompted for connections and then publish to Team.
-
-![Importing 2](assets/DeployApp-ImportApp-5.png)
-
-![Importing 2](assets/DeployApp-ImportApp-6.png)
-
-Select desired channel to publish app. Once publish is complete you should see Help Desk App and tab within channel.
-
-![Importing 2](assets/DeployApp-ImportApp-7.png)
-
-14. Next create a new column in Teams document library called **LinkedTicketID**. Click on the files tab in Teams where the app is deployed and select Open in SharePoint.
-
-![Add SPO Column](assets/DeployApp-ImportApp-11.png)
-
-15. Click on the **Add column** and name column **LinkedTicketID**.
-
-![Add SPO Column](assets/DeployApp-ImportApp-12.png)
-
-16. Update the Flow used for attachment and change site url to proper SharePoint Team site. Browse PowerApps app within Teams and select the Team you deployed Help Desk app.
-
-![Update Flow](assets/DeployApp-ImportApp-8.png)
-
-17. Click on cloud Flows and select the HelpDesk-UploadMultipleFilesToLibrary Flow and edit the Flow.
-
-![Change Url](assets/DeployApp-ImportApp-9.png)
-
-18. Change destination of SharePoint site by select new site url from the dropdown and republish the Flow. Update the library name to Documents.
-
-![Update Url](assets/DeployApp-ImportApp-10.png)
-
-19. Click on the save button to republish the Flow.
-
-![Update Url](assets/DeployApp-ImportApp-13.png)
-
-## 3. Import Admin Configuration App
-
-1. Download the admin app solution from the FedSolutions repository here: [Microsoft FedSolutions Help Desk](https://github.com/FedSolutions/helpdesk)
-
-2. From the side-rail, select **Power Apps**.
-NOTE: if you do not see Power Apps in the side-rail, click on Apps and search for Power Apps. Click **Add** (or **Open** if previously added).
-
-![Select App](assets/DeployApp-ImportApp-0.png)
-
-3. From the **Build** tab, select the appropriate team and click **See All** link at bottom.
-
-![Select App](assets/DeployApp-ImportApp-1A.png)
-
-4. Clicking on the See all link will take you to following page where you can click on import button
-
-![Import App](assets/DeployApp-ImportApp-4A.png)
-
-6. From the Select a file pane, select **browse** and navigate to the location where you downloaded the solution in Step 1.
-
-![Browse](assets/DeployConfigApp-1.png)
-
-7. Select **Next**.
-
-![Next](assets/DeployConfigApp-2.png)
-
-8. Click on the **Import** button. 
-
-## 4. Import the Flows to Teams Dataverse
+## 2. Import the Flows to Teams Dataverse
 
 1. Download the solution from the FedSolutions repository here: [Microsoft FedSolutions Help Desk](https://github.com/FedSolutions/helpdesk)
 
@@ -215,12 +108,7 @@ NOTE: if you do not see Power Apps in the side-rail, click on Apps and search fo
 11. Click Ok and should take you to another screen and once Flows are imported you will see the following message
 
 ![Next](assets/Deploy-ImportFlow-4.png)
-
-## 5. Configuration Settings
-
-There are configuration tables that need updated in order to run the Help Desk application. Setting up the deep linking is a manual process. The other configuration settings can be updated with the admin app.
-
-### Create SharePoint list for image storage
+## 3. Create SharePoint list for image storage
 
 There is a requirement to store images in SharePoint. This reduces the storage required in your Dataverse database. The following steps will help you create a list in SharePoint that can be used to store images.
 
@@ -238,6 +126,134 @@ There is a requirement to store images in SharePoint. This reduces the storage r
      ![Advanced List Settings](assets/Deploy-SPList-5.png)
   8. Update the item level security to the following settings and click OK. 
      ![Advanced List Settings](assets/Deploy-SPList-6.png)
+## 4. Import Admin Configuration App
+
+1. Download the admin app solution from the FedSolutions repository here: [Microsoft FedSolutions Help Desk](https://github.com/FedSolutions/helpdesk)
+
+2. From the side-rail, select **Power Apps**.
+NOTE: if you do not see Power Apps in the side-rail, click on Apps and search for Power Apps. Click **Add** (or **Open** if previously added).
+
+![Select App](assets/DeployApp-ImportApp-0.png)
+
+3. From the **Build** tab, select the appropriate team and click **See All** link at bottom.
+
+![Select App](assets/DeployApp-ImportApp-1A.png)
+
+4. Clicking on the See all link will take you to following page where you can click on import button
+
+![Import App](assets/DeployApp-ImportApp-4A.png)
+
+6. From the Select a file pane, select **browse** and navigate to the location where you downloaded the solution in Step 1.
+
+![Browse](assets/DeployConfigApp-1.png)
+
+7. Select **Next**.
+
+![Next](assets/DeployConfigApp-2.png)
+
+8. Click on the **Import** button.
+
+9. Select the HDManagementApp under the **Apps** tab.
+
+10. Click on the Teams icon with PowerApp designer surface to publish the app to Teams.
+
+![Next](assets/DeployConfigApp-3.png)
+
+11. Select **Next**.
+
+![Next](assets/DeployConfigApp-4.png)
+
+12. Select the channel within the Team where the Help Desk App will be published and select **Save and Close**.
+
+![General](assets/DeployConfigApp-5.png)
+## 5. Configure categories table with configuration app.
+
+1. Open the HD Configuration App from within Teams and click on **New Record**.
+
+![New Record](assets/Config-HDCategories-1.png)
+
+2. Add a category name, then click on the search icon next to GroupID. 
+
+![New Record](assets/Config-HDCategories-2.png)
+
+3. Select the group from the populate list.
+
+![Select group](assets/Config-HDCategories-3.png)
+
+4. Click on the search icon next to CategoryID without closing the popup window.
+
+5. Select the channelId from the popup window for that group.
+
+![Select group](assets/Config-HDCategories-5.png)
+
+6. Select active from the status, enter an email address for the HelpDesk or specific team that supports that category. Also enter TicketAttachments as the name of the list. This is the SharePoint list name that will hold all the attachments for each ticket. Click on the save icon to save the record.
+
+![Complete category](assets/Config-HDCategories-6.png)
+
+7. Repeat steps 2-6 for each category you need to configure. 
+## 6. Import the HelpDesk app to Teams Dataverse
+
+1. Download the solution from the FedSolutions repository here: [Help Desk](https://github.com/FedSolutions/helpdesk)
+
+2. From the side-rail, select **Power Apps**.
+NOTE: if you do not see Power Apps in the side-rail, click on Apps and search for Power Apps. Click **Add** (or **Open** if previously added).
+
+![Select App](assets/DeployApp-ImportApp-0.png)
+
+3. From the **Build** tab, select the appropriate team and click **See All** link at bottom.
+
+![Select App](assets/DeployApp-ImportApp-1A.png)
+
+- If no apps appear in list select the **Import your solution link**
+
+![Import App](assets/DeployApp-ImportApp-1.png)
+
+4. Clicking on the See all link will take you to following page where you can click on import button
+
+![Import App](assets/DeployApp-ImportApp-4A.png)
+
+6. From the Select a file pane, select **browse** and navigate to the location where you downloaded the solution in Step 1.
+
+![Browse](assets/DeployApp-ImportApp-2.png)
+
+7. Select **Next**.
+
+![Next](assets/DeployApp-ImportApp-3.png)
+
+8. On the **Import** pane, verify all items are selected and select **Import**.
+
+![Importing 2](assets/DeployApp-ImportApp-4.png)
+
+9. When the Import is complete, select apps from left menu and click on the Help Desk App. This will open application in PowerApps editor. You may be prompted to allow the data connections
+
+![Importing 2](assets/Config-HelpDeskApp-1.png)
+
+10. Update Ticket attachments data connection within the app. Select Data from left rail of PowerApps editor and remove ticketattachments data connection.
+
+![Remove Connection](assets/Config-HelpDeskApp-2.png)
+
+11. Click on add a connection under Data tab and select SharePoint.
+
+![Add Connection](assets/Config-HelpDeskApp-3.png)
+
+12. Enter url of SharePoint site where HelpDesk app is deployed and click on connect.
+
+![Connect SharePoint site](assets/Config-HelpDeskApp-4.png)
+
+13. Select TicketAttachment list and c
+
+![Connect SharePoint site](assets/Config-HelpDeskApp-5.png)
+
+10. Click on allow when prompted for connections and then publish to Team.
+
+![Importing 2](assets/Config-HelpDeskApp-6.png)
+
+![Importing 2](assets/Config-HelpDeskApp-7.png)
+
+Select desired channel to publish app. Once publish is complete you should see Help Desk App and tab within channel.
+## 7. Configuration Settings
+
+There are configuration tables that need updated in order to run the Help Desk application. Setting up the deep linking is a manual process. The other configuration settings can be updated with the admin app.
 ### Configuring the deeplink value
 
 In the HD_Ticket_Settings_01S table add a row for DeepLink in Teams. This is required for DeepLink from Teams post to ticket within the Help Desk application.
@@ -260,7 +276,7 @@ If the value column is not visible click on the Add column button and select Val
 
 ![Update values](assets/UpdateTable-DeepLink-2.png)
 
-## 6. Configure cleanup Flow
+## 8. Configure cleanup Flow
 
 This Flow is optional to deploy and designed to purge data from the Help Desk ticket and comments dataverse tables to conserve space. You may want to take a [backup](https://docs.microsoft.com/en-us/power-platform/admin/backup-restore-environments) or [export] old data prior to running this Flow. 
 
@@ -276,6 +292,4 @@ This Flow is optional to deploy and designed to purge data from the Help Desk ti
 
 ![Enable Flow](assets/UpdateTable-PurgeData-3.png)
 
-## 7. Configure PowerBI report
-
-## 8. Troubleshooting
+## 9. Troubleshooting
