@@ -176,7 +176,7 @@ NOTE: if you do not see Power Apps in the side-rail, click on Apps and search fo
 
 ![New Record](assets/Config-HDCategories-1.png)
 
-2. Add a category name, then click on the search icon next to GroupID. 
+2. Add a category name, then click on the search icon next to GroupID.
 
 ![New Record](assets/Config-HDCategories-2.png)
 
@@ -184,13 +184,13 @@ NOTE: if you do not see Power Apps in the side-rail, click on Apps and search fo
 
 ![Select group](assets/Config-HDCategories-3.png)
 
-4. Click on the search icon next to CategoryID without closing the popup window.
+4. Click on the search icon next to CategoryID.
 
 5. Select the channelId from the popup window for that group.
 
 ![Select group](assets/Config-HDCategories-5.png)
 
-6. Select active from the status, enter an email address for the HelpDesk or specific team that supports that category. Also enter TicketAttachments as the name of the list. This is the SharePoint list name that will hold all the attachments for each ticket. Click on the save icon to save the record.
+6. Select active from the status, enter an email address for the HelpDesk or specific team that supports that category. Click on the save icon to save the record.
 
 ![Complete category](assets/Config-HDCategories-6.png)
 
