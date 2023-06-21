@@ -1,12 +1,12 @@
 # Quick Desk Application
 
-[Supported Clouds](https://github.com/FedSolutions/taag-quick-desk/blob/main/docs/DeploymentGuide.md) | [Deployment Guide](https://github.com/FedSolutions/taag-quick-desk/blob/main/docs/Deployment-Guide.md)
+[Supported Clouds](https://github.com/FedSolutions/taag-quick-desk/wiki/SupportedClouds) | [Deployment Guide](https://github.com/FedSolutions/taag-quick-desk/wiki/Deployment-Guide)
 
 
 ## Supported Versions of Office 365
 Commercial|GCC|GCC High|GCC DoD
 -|-|-|-
-![Supported](/docs//assets/supported.png)|![Supported](/docs/assets/supported.png)|![Supported](/docs/assets/supported.png)|![Supported](/docs/assets/supported.png)
+![Supported](/docs/assets/supported.png)|![Supported](/docs/assets/supported.png)|![Supported](/docs/assets/supported.png)|![Supported](/docs/assets/supported.png)
 
 
 
