@@ -172,6 +172,8 @@ NOTE: if you do not see Power Apps in the side-rail, click on Apps and search fo
 ![General](assets/DeployConfigApp-5.png)
 ## 5. Configure categories table with configuration app.
 
+The category table is used to configure the categories that will be used by the Help Desk app. Each category will allow you to setup an email address for the supporting team as well as the channel within a Team that messages will be posted when a user opens a ticket. The following steps will help you configure the categories table.
+
 1. Open the HD Configuration App from within Teams and click on **New Record**.
 
 ![New Record](assets/Config-HDCategories-1.png)
@@ -257,7 +259,7 @@ NOTE: if you do not see Power Apps in the side-rail, click on Apps and search fo
 Select desired channel to publish app. Once publish is complete you should see Help Desk App and tab within channel.
 ## 7. Configuration Settings
 
-There are configuration tables that need updated in order to run the Help Desk application. Setting up the deep linking is a manual process. The other configuration settings can be updated with the admin app.
+There are configuration settings that need updated in order to run the Help Desk application. Setting up the deep linking is a manual process. The other configuration settings can be updated using the admin app.
 ### Configuring the deeplink value
 
 In the HD_Ticket_Settings_01S table add a row for DeepLink in Teams. This is required for DeepLink from Teams post to ticket within the Help Desk application.
