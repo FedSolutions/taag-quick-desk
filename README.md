@@ -27,7 +27,7 @@ Quick Desk is a light weight help desk application than be used to track and man
 Version|Published|Notes
 -|-|-
 1.0.0 | September 9, 2022 | Initial Release
-1.0.1 | June 11, 2023 | Added logic for held desk agent to delete tickets
+1.0.1 | June 11, 2023 | Added logic for help desk agent to delete tickets
 
 ## Feedback
 
