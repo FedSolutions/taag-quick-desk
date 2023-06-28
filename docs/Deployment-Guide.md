@@ -21,6 +21,7 @@ To begin, you will need:
   - Teams
   - Power Apps
 - A team with the users who will be submitting HelpDesk tickets with this app. (You can add or remove team members later!)
+- A team for help desk app agents, members of this team will be able to view and manage tickets submitted by users. (You can add or remove team members later!)
 - A copy of the HelpDesk app [GitHub repo] (https://github.com/FedSolutions/helpdesk/tree/main/Solution)
 
 - - -
@@ -172,7 +173,7 @@ NOTE: if you do not see Power Apps in the side-rail, click on Apps and search fo
 ![General](assets/DeployConfigApp-5.png)
 ## 5. Configure categories table with configuration app.
 
-The category table is used to configure the categories that will be used by the Help Desk app. Each category will allow you to setup an email address for the supporting team as well as the channel within a Team that messages will be posted when a user opens a ticket. The following steps will help you configure the categories table.
+The category table is used to configure the categories that will be used by the Help Desk app. Each category will allow you to setup an email address for the supporting team as well as the channel within a Team that messages will be posted when a user opens a ticket. The following steps will help you configure the categories table. Members of the Teams selected in the category table will be configured as agents in the Help Desk app. Agents will have ability to take action on tickets, close tickets and reassign tickets.
 
 1. Open the HD Configuration App from within Teams and click on **New Record**.
 
